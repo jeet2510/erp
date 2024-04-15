@@ -1,8 +1,11 @@
 <?php
 
+use App\Http\Controllers\FrontEndController;
 use Illuminate\Support\Facades\Route;
 
-Route::view('/', 'index');
+// Route::view('/', 'index');
+Route::get('/', [FrontEndController::class, 'index']);
+Route::get('/login', [FrontEndController::class, 'login'])->name('login');
 Route::view('/analytics', 'analytics');
 Route::view('/finance', 'finance');
 Route::view('/crypto', 'crypto');
